@@ -14,6 +14,7 @@ let reducer: Reducer<number> = (state: number, action: Action) => {
   case 'DECREMENT':
     return state - 1;
   case 'PLUS':
+    // Apenas pega um dado e adiciona uma carga a ele ( reducer method , just another function but with dynamic data )
     return state + action.payload;
   default:
     return state;

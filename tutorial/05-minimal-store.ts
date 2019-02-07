@@ -1,12 +1,16 @@
+// Cria uma interface de "actions"
 interface Action {
   type: string;
   payload?: any;
 }
 
+// Cria uma interface de "reducers ( functions de actions and states )"
 interface Reducer<T> {
   (state: T, action: Action): T;
 }
 
+
+// Cria uma classe que disponibiliza o state ( getState() ) atual e o atualiza ( dispatch() )
 class Store<T> {
   private _state: T;
 
@@ -26,7 +30,7 @@ class Store<T> {
   }
 }
 
-// same reducer as before
+// Cria um reducer ( functions of actions ), same reducer as before
 let reducer: Reducer<number> = (state: number, action: Action) => {
   switch (action.type) {
   case 'INCREMENT':
